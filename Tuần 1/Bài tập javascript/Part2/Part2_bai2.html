@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Part 2 - Bài 2</title>
+  </head>
+  <body>
+    <div>
+      <h2>Calculate the tip</h2>
+      <br />
+      
+      <button onclick="calculate_tip()">Calculate tip</button><br />
+      <h2 id="ketqua"></h2>
+    </div>
+
+    <script>
+      const arrayBills = [125, 555, 44];
+      const arrayTips = [];
+      const arrayTotals = [];
+      function calculate_tip() {
+        for (let i = 0; i < arrayBills.length; i++) {
+          const billvalue = arrayBills[i];
+          const tip =
+            50 < billvalue && billvalue < 300
+              ? billvalue * 0.15
+              : billvalue * 0.2;
+          const total = billvalue + tip;
+          arrayTips.push(tip);
+          arrayTotals.push(total);
+          
+        }document.getElementById("ketqua").innerHTML =
+            "Bills " +
+            arrayBills +
+            "<br/> Tips: " +
+            arrayTips +
+            "<br/> Totals: " +
+            arrayTotals;
+      }
+    </script>
+  </body>
+</html>

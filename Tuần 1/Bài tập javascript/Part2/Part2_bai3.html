@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Part 2 - bài 3</title>
+  </head>
+  <body>
+    <h2>Kết quả in trong console</h2>
+    <script>
+      const Mark = {
+        fullName: "Mark",
+        mass: 78,
+        height: 1.69,
+        calBIM() {
+          return this.mass / (this.height * this.height);
+        },
+      };
+      const Join = {
+        fullName: "Join",
+        mass: 92,
+        height: 1.95,
+        calBIM() {
+          return this.mass / (this.height * this.height);
+        },
+      };
+      if (Join.calBIM() > Mark.calBIM()) {
+        console.log(
+          "Join: " + Join.calBIM() + "is hight than Mark: " + Mark.calBIM(),
+        );
+      } else if (Join.calBIM() < Mark.calBIM()) {
+        console.log(
+          "Join: " + Join.calBIM() + "is less than Mark: " + Mark.calBIM(),
+        );
+      } else {
+        console.log(
+          "Join: " + Join.calBIM() + "is equal Mark: " + Mark.calBIM(),
+        );
+      }
+    </script>
+  </body>
+</html>

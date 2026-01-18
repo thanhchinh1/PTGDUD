@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Part 2 - bài 4</title>
+  </head>
+  <body>
+    <button onclick="calculate_tip()">Calculate tip</button><br />
+    <h2 id="ketqua"></h2>
+    <h2 id="avg"></h2>
+    <script>
+      const arrayBills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+
+      function calculate_tip() {
+        // Reset mảng mỗi lần tính toán
+        const tips = [];
+        const totals = [];
+
+        for (let i = 0; i < arrayBills.length; i++) {
+          const billvalue = arrayBills[i];
+          const tip =
+            50 < billvalue && billvalue < 300
+              ? billvalue * 0.15
+              : billvalue * 0.2;
+          const total = billvalue + tip;
+          tips.push(tip);
+          totals.push(total);
+        }
+
+        document.getElementById("ketqua").innerHTML =
+          "<strong>Bills:</strong> " +
+          arrayBills.join(", ") +
+          "<br/><strong>Tips:</strong> " +
+          tips.map((t) => t.toFixed(2)).join(", ") +
+          "<br/><strong>Totals:</strong> " +
+          totals.map((t) => t.toFixed(2)).join(", ");
+        document.getElementById("avg").innerHTML =
+          "Avg total bill: " + avg(totals);
+      }
+      function avg(totals) {
+        let tong = 0;
+        for (let i of totals) {
+          tong += i;
+        }
+        return tong / totals.length;
+      }
+    </script>
+  </body>
+</html>
