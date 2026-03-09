@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài 1 - tuần 3</title>
+  </head>
+  <body>
+    <h2>Kết quả in trong console</h2>
+    <script>
+      const arr = [17, 21, 23];
+      function printForecast(arr) {
+        let result = "";
+        // Duyet qua mang array
+        for (let i = 0; i < arr.length; i++) {
+          let temp = arr[i];
+          let day = i + 1;
+          result += "..." + arr[i] + "oC in " + day + " day";
+        }
+        console.log(result);
+      }
+      printForecast(arr);
+    </script>
+  </body>
+</html>
