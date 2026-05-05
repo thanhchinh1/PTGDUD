@@ -1,0 +1,2 @@
+import Header from '../components/Header';import WelcomeModal from '../components/WelcomeModal';import { img } from '../data/data';
+export default function Welcome(){return <><Header/><div className="page-width screen900 bg-preview" style={{backgroundImage:`url(${img.hero})`}}><div className="day-card ghosted"><b>Recipe of the day</b><h2>Salad Caprese</h2><p>Classic Italian Salad Caprese with fresh mozzarella.</p></div></div><WelcomeModal/></>}

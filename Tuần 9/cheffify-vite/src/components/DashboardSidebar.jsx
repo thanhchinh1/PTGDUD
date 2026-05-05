@@ -1,0 +1,3 @@
+import { useState } from 'react';
+import { LayoutDashboard, Folder, Users, PieChart, MessageSquare, Code2 } from 'lucide-react';
+export default function DashboardSidebar(){const [active,setActive]=useState('Dashboard'); const items=[['Dashboard',LayoutDashboard],['Projects',Folder],['Teams',Users],['Analytics',PieChart],['Messages',MessageSquare],['Integrations',Code2]];return <aside className="dash-side"><h2><span className="mark"></span> Logo</h2>{items.map(([name,Icon])=><button key={name} onClick={()=>setActive(name)} className={active===name?'active':''}><Icon size={20}/>{name}</button>)}<div className="upgrade"><div className="illus">🧑‍💻</div><h3>V2.0 is available</h3><button onClick={()=>setActive('Upgrade')}>Try now</button></div></aside>}

@@ -1,0 +1,183 @@
+Bạn là một Frontend Developer chuyên ReactJS, Vite, React Router và chuyển UI design từ file PDF/Figma/Visily sang code thực tế.
+
+Tôi sẽ cung cấp 2 file thiết kế:
+1. visily-multiscreens.pdf là file chính, gồm 9 màn hình cần dựng lại.
+2. 3_Week_8_10_ReactJS_UI.pdf là file phụ trợ/tham chiếu để đối chiếu giao diện.
+
+Nhiệm vụ:
+Hãy xây dựng một project ReactJS dùng Vite dựa trên 2 file trên. File chính cần bám sát là visily-multiscreens.pdf. Giao diện phải giống bố cục, màu sắc, khoảng cách, card, header, footer, modal, form, dashboard và các section trong file thiết kế nhất có thể.
+Yêu cầu kỹ thuật:
+- Dùng ReactJS với Vite.
+- Dùng React Router DOM để chuyển trang.
+- Chia giao diện thành nhiều component rõ ràng, không viết tất cả trong một file.
+- Không dùng UI framework như Bootstrap, Ant Design, MUI.
+- CSS tự viết bằng file .css hoặc module CSS.
+- Code phải clean, dễ đọc, dễ chỉnh sửa.
+- Tất cả các button đều phải hoạt động và có tác vụ rõ ràng chứ không phải bấm chỉ hiện ra mỗi cái aleart và không có các button bấm vào những hiển thị trang giống nhau, mỗi button là 1 nhiệm vụ riêng biệt.
+- Có thể dùng data mẫu trong file data.js để render card, recipe, comment, dashboard table.
+- Ảnh phải chọn đúng nội dung món ăn/công thức/nấu ăn/dashboard, không dùng ảnh bừa. Nếu dùng ảnh online, ưu tiên ảnh từ Unsplash/Pexels hoặc ảnh phù hợp với nội dung từng card.
+- Nếu không thể tải ảnh online, tạo thư mục assets và dùng tên ảnh phù hợp để tôi tự thay sau.
+- Layout chính cần cố định theo kích thước thiết kế 1440px ở desktop.
+
+Cấu trúc route cần có 9 trang:
+- / hoặc /welcome: Trang 1 - Discover Cheffify modal
+- /login: Trang 2 - Login modal
+- /no-results: Trang 3 - No search results
+- /recipe-box: Trang 4 - Emma Gonzalez's Recipe Box
+- /salad: Trang 5 - Salad listing
+- /subscribe: Trang 6 - Subscription page
+- /dashboard: Trang 7 - Dashboard
+- /home: Trang 8 - Homepage
+- /recipe/strawberry-shortcake: Trang 9 - Recipe detail
+
+Yêu cầu kích thước từng trang:
+
+Trang 1:
+- Màn chính: width 1440px, height 900px.
+- Modal thông báo: width 824px, height 811px.
+- Có overlay mờ phía sau.
+- Có nút Next, Skip, nút đóng X.
+- Next chuyển trạng thái slide/dot hoặc chuyển sang login.
+- Skip/Close đóng modal hoặc chuyển về home.
+
+Trang 2:
+- Màn chính: width 1440px, height 900px.
+- Màn login: width 1139px, height 624px.
+- Có form nhập email.
+- Nút Continue phải validate email rỗng/sai định dạng.
+- Có nút Continue with Google, Facebook, Apple, khi bấm hiện thông báo hoặc trạng thái demo.
+- Có nút đóng X.
+
+Trang 3:
+- Màn chính: width 1440px, height 1490px.
+- Chia 3 phần:
+  + Header: width 1440px, height 80px.
+  + Nội dung giữa: width 1440px, height 953px.
+  + Footer: width 1440px, height 380px.
+- Có sidebar filter bên trái.
+- Có nội dung “Sorry, no results were found for ...”.
+- Có icon/illustration tìm kiếm không có kết quả.
+- Filter checkbox, rating, time slider hoặc range giả lập phải tương tác được.
+- Nút Apply cập nhật trạng thái filter.
+
+Trang 4:
+- Màn chính: width 1440px, height 1693px.
+- Gồm 4 phần:
+  + Header: width 1440px, height 80px.
+  + Breadcrumb: width 1440px, height 54px.
+  + Nội dung chính: width 1440px, height 1179px.
+  + Footer: width 1440px, height 380px.
+- Dựng profile Emma Gonzalez.
+- Có avatar, mô tả, số subscribe, nút Share.
+- Có tab Saved Recipes, Folders, Recipes by Genevieve.
+- Có grid recipe card.
+- Bookmark trên từng card phải toggle được.
+- Pagination phải bấm được.
+
+Trang 5:
+- Màn chính: width 1440px, height 1696px.
+- Gồm 3 phần:
+  + Header: width 1440px, height 80px.
+  + Nội dung chính: width 1440px, height 1234px.
+  + Footer: width 1440px, height 380px.
+- Có sidebar filter bên trái.
+- Có tiêu đề Salad (32).
+- Có dropdown sort A-Z.
+- Có grid 9 recipe cards.
+- Filter, sort, bookmark, pagination phải tương tác được.
+
+Trang 6:
+- Màn chính: width 1440px, height 2139px.
+- Gồm 6 phần:
+  + Header: width 1440px, height 80px.
+  + Breadcrumb: width 1440px, height 54px.
+  + Hero subscription: width 1440px, height 718px.
+  + All Access includes: width 1440px, height 367px.
+  + Cooking only subscription: width 1440px, height 541px.
+  + Footer: width 1440px, height 380px.
+- Có các gói subscription.
+- Radio chọn gói $2/month hoặc $20/year.
+- Nút Subscribe Now tương tác được và hiện thông báo đã chọn gói.
+
+Trang 7:
+- Màn chính: width 1440px, height 900px.
+- Đây là dashboard.
+- Tự chia layout hợp lý giống file:
+  + Sidebar trái.
+  + Top bar.
+  + Overview cards.
+  + Detailed report table.
+  + Pagination.
+- Sidebar menu click được và active state thay đổi.
+- Checkbox trong bảng chọn được.
+- Import/Export button có tương tác.
+- Search input lọc bảng demo.
+- Icon edit có thể mở alert hoặc trạng thái đang sửa.
+
+Trang 8:
+- Màn chính: width 1440px, height 3246px.
+- Gồm 6 phần:
+  + Header: width 1440px, height 80px.
+  + Hero: width 1438px, height 871px.
+  + This Summer Recipes: width 1440px, height 552px.
+  + Recipes With Videos: width 1440px, height 552px.
+  + Editor's pick: width 1440px, height 796px.
+  + Footer: width 1440px, height 380px.
+- Có hero lớn với ảnh nấu ăn phù hợp.
+- Có recipe of the day card.
+- Các nút View now, bookmark, Login, Subscribe, Your Recipe Box phải điều hướng/tương tác được.
+- Click recipe card có thể chuyển sang trang chi tiết.
+
+Trang 9:
+- Màn chính: width 1440px, height 5204px.
+- Gồm 4 phần:
+  + Header: width 1440px, height 80px.
+  + Breadcrumb: width 1440px, height 54px.
+  + Nội dung chính: width 1440px, height 4605px.
+  + Footer: width 1440px, height 380px.
+- Dựng trang chi tiết công thức “How to make a Strawberry Shortcake”.
+- Có tiêu đề, mô tả, author card, ingredients box, nút Add to Your Grocery List.
+- Có các step nấu ăn kèm hình ảnh đúng nội dung strawberry shortcake.
+- Có Cooking note textarea và nút Post.
+- Có tab All Reviews, Most Helpful, Private.
+- Có danh sách comment/review.
+- Có Recently Viewed recipes.
+- Button Post thêm note/comment demo vào danh sách.
+- Bookmark, like/reply hoặc các nút nhỏ có tương tác cơ bản.
+
+Component bắt buộc nên có:
+- Header.jsx
+- Footer.jsx
+- RecipeCard.jsx
+- FilterSidebar.jsx
+- Pagination.jsx
+- Breadcrumb.jsx
+- SectionTitle.jsx
+- Modal.jsx hoặc WelcomeModal.jsx
+- LoginModal.jsx
+- DashboardSidebar.jsx
+- DashboardTable.jsx
+
+Cấu trúc thư mục mong muốn:
+src/
+  assets/
+  components/
+  data/
+  pages/
+  routes/
+  App.jsx
+  main.jsx
+  index.css
+
+Output yêu cầu:
+1. Trả về toàn bộ cấu trúc project.
+2. Trả về code đầy đủ cho từng file quan trọng.
+3. Đảm bảo project chạy được bằng:
+   npm install
+   npm run dev
+4. Nếu có package.json thì dependencies phải dùng registry public npm bình thường, không dùng registry nội bộ.
+5. Sau khi code xong, hãy giải thích ngắn gọn:
+   - Route nào ứng với trang nào.
+   - Component nào dùng chung.
+   - Các button đã tương tác như thế nào.
+6. Không trả lời chung chung. Hãy tạo code hoàn chỉnh nhất có thể.
